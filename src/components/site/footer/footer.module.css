@@ -1,0 +1,38 @@
+
+.footer {
+  width: 100%;
+  background-color: #f3c1c1;
+  padding: 20px;
+  color: #333;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 14px;
+  flex-wrap: wrap;
+  height: auto; 
+}
+
+.footerLink {
+  color: #333;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footerLink:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) { 
+  .footer {
+      flex-direction: column; 
+      align-items: center; 
+      height: auto; 
+  }
+}
+
+@media (max-width: 480px) {
+  .footerLink {
+      margin: 5px 0; 
+  }
+}
