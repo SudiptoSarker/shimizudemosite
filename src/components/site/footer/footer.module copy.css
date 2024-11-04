@@ -1,20 +1,21 @@
+
 .footer {
   width: 100%;
   background-color: #f3c1c1;
   padding: 20px;
   color: #333;
   display: flex;
-  justify-content: center; /* Center the links horizontally */
+  justify-content: space-around;
   align-items: center;
   font-size: 14px;
   flex-wrap: wrap;
-  gap: 15px; /* Add space between each link item */
+  height: auto; 
 }
 
 .footerLink {
   color: #333;
   text-decoration: none;
-  margin: 0 5px; /* Reduce the horizontal margin for tighter spacing */
+  margin: 0 10px;
 }
 
 .footerLink:hover {
@@ -24,14 +25,14 @@
 /* Responsive Styles */
 @media (max-width: 768px) { 
   .footer {
-      flex-direction: column;
-      align-items: center;
-      gap: 10px; /* Adjust gap for smaller screens */
+      flex-direction: column; 
+      align-items: center; 
+      height: auto; 
   }
 }
 
 @media (max-width: 480px) {
   .footerLink {
-      margin: 3px 0; /* Reduce margin for very small screens */
+      margin: 5px 0; 
   }
 }
