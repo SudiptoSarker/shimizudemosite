@@ -3,14 +3,14 @@
   height: 300px;
   background: url('/images/header-background.jpg') no-repeat center center;
   background-size: cover;
-  display: flex;
-  align-items: center;
+  display: list-item;
+  align-items: flex-start;
   justify-content: center;
   padding: 40px;
 }
 
 .logo {
-  max-width: 150px;
+  max-width: 200px;
 }
 /* Responsive Styles */
 @media (max-width: 768px) {
