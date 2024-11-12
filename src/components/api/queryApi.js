@@ -28,7 +28,7 @@ export const getSubscribedData = async (siteid, muid) => {
     return await calltoApi(query,[]);
 }
 
-export const fetchSubscriptionLoginData = async (siteId, sectionname) => {
+export const fetchSubscriptionData = async (siteId, sectionname) => {
     try {
         if (!siteId) {
             throw new Error(`Site with name '${sitename}' not found.`);
@@ -43,6 +43,20 @@ export const fetchSubscriptionLoginData = async (siteId, sectionname) => {
     }
 };
 
+export const fetchLoginData = async (siteId, sectionname) => {
+    try {
+        if (!siteId) {
+            throw new Error(`Site with name '${sitename}' not found.`);
+        }
+        const subscriptionQuery = `SELECT * FROM [dbo].[${siteId}_logindata] WHERE section = '${sectionname}'`;        
+        const subscriptionResult = await calltoApi(subscriptionQuery,[]);
+        return subscriptionResult;
+
+    } catch (error) {
+        console.error('Error fetching subscription data:', error);
+        throw error;
+    }
+};
 export const fetchNotificationsAndAnnouncements = async (siteId, sectionname) => {
     const query = `SELECT * FROM [dbo].[${siteId}_textlinks] WHERE section = '${sectionname}'`;    
     const values = [];

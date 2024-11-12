@@ -27,7 +27,7 @@ const HomePage = ({globalData }) => {
             
             const getSubscriptionData = async (siteId) => {                
             try {            
-                const response = await fetchSubscriptionLoginData(siteId,"SubscriptionOptions");
+                const response = await fetchSubscriptionData(siteId,"SubscriptionOptions");
                 setSubscriptionData(response.data);
             } catch (error) {
                 console.log("Error fetching subscription data:", error);

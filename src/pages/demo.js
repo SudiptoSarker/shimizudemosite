@@ -5,7 +5,7 @@ import NotificationComponent from "@/components/site/notificationbanner/notifica
 import AnnounceComponent from "@/components/site/announcebanner/announcecomponent";
 import SubscriptionButton from "@/components/site/subscriptionbutton/subscriptionbuttoncomponent";
 import LoginButton from "@/components/site/loginbutton/loginbuttoncomponent";
-import { fetchSubscriptionLoginData,fetchNotificationsAndAnnouncements } from "@/components/api/queryApi";
+import { fetchSubscriptionData,fetchLoginData,fetchNotificationsAndAnnouncements } from "@/components/api/queryApi";
 import { siteid } from '@/helper/helper';
 
 const HomePage = ({globalData }) => {
@@ -32,7 +32,7 @@ const HomePage = ({globalData }) => {
     
     const getSubscriptionData = async (siteId) => {                
     try {            
-        const response = await fetchSubscriptionLoginData(siteId,"SubscriptionOptions");
+        const response = await fetchSubscriptionData(siteId,"SubscriptionOptions");
         setSubscriptionData(response.data);
     } catch (error) {
         console.log("Error fetching subscription data:", error);
@@ -40,7 +40,7 @@ const HomePage = ({globalData }) => {
     };            
     const getLoginData = async (siteId) => {
         try {            
-            const response = await fetchSubscriptionLoginData(siteId,"LoginForm");
+            const response = await fetchLoginData(siteId,"LoginSection");
             setLoginData(response.data);
         } catch (error) {
             console.log("Error fetching subscription data:", error);
